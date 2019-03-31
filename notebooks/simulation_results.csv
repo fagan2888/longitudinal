@@ -1,0 +1,41 @@
+,Equation,FEAT Best,FEAT Best Accuracy,FEAT Best Model,Predictors,Solution Archive
+0,1.0*bmi_slope+1.0*lab_var,[sex][race],0.533,"Feature	Weight
+race	-0.022967
+sex	0.002621
+","['bmi_slope', 'lab_var']","complexity	fitness	fitness_v	eqn
+"
+1,1.0*lab_max,[sex][race],0.543,"Feature	Weight
+race	-0.022967
+sex	0.002621
+",['lab_max'],"complexity	fitness	fitness_v	eqn
+"
+2,1.0*bmi_slope,[sex][race],0.527,"Feature	Weight
+race	-0.022967
+sex	0.002621
+",['bmi_slope'],"complexity	fitness	fitness_v	eqn
+"
+3,1.0*bmi_slope+1.0*lab_slope,[sex][race],0.512,"Feature	Weight
+race	-0.022967
+sex	0.002621
+","['bmi_slope', 'lab_slope']","complexity	fitness	fitness_v	eqn
+"
+4,1.0*bmi_slope+1.0*lab_max,[sex][race],0.513,"Feature	Weight
+race	-0.022967
+sex	0.002621
+","['bmi_slope', 'lab_max']","complexity	fitness	fitness_v	eqn
+"
+5,1.0*lab_var,[sex][race],0.622,"Feature	Weight
+race	-0.022967
+sex	0.002621
+",['lab_var'],"complexity	fitness	fitness_v	eqn
+"
+6,1.0*lab_min,[sex][race],0.537,"Feature	Weight
+race	-0.022967
+sex	0.002621
+",['lab_min'],"complexity	fitness	fitness_v	eqn
+"
+7,1.0*bmi_slope+1.0*lab_median+1.0*age_max,[sex][race],0.506,"Feature	Weight
+race	-0.022967
+sex	0.002621
+","['bmi_slope', 'lab_median', 'age_max']","complexity	fitness	fitness_v	eqn
+"
