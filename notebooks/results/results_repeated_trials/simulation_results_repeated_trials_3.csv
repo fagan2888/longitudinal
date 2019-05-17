@@ -1,0 +1,50 @@
+,Equation,FEAT Best,FEAT Best Accuracy,FEAT Best Model,Predictors,Solution Archive
+0,1.0*bmi_slope+1.0*lab_var,[min(z_lab)],0.586,"Feature		Weight
+min(z_lab)		-0.453478
+","['bmi_slope', 'lab_var']","complexity	fitness	fitness_v	eqn
+8	0.496101	0.944966	[slope(z_bmi)]
+10	0.451333	1.041702	[slope(z_bmi)][min(z_lab)]
+12	0.243985	1.874365	[slope(z_bmi)][min(z_lab)][max(z_lab)]"
+1,1.0*lab_max,[mean(z_lab)],0.868,"Feature		Weight
+mean(z_lab)		3.837281
+",['lab_max'],"complexity	fitness	fitness_v	eqn
+2	0.266094	1.792535	[mean(z_lab)]
+6	0.009248	2.389312	[(max(z_lab)<1.142088)]
+8	0.007794	2.698081	[max(z_lab)][(max(z_lab)<1.142088)]"
+2,1.0*bmi_slope,[mean(z_bmi)][skew(z_bmi)],0.627,"Feature		Weight
+mean(z_bmi)		0.622244
+skew(z_bmi)		0.095689
+",['bmi_slope'],"complexity	fitness	fitness_v	eqn
+2	0.652212	0.728906	[mean(z_bmi)]
+8	0.652195	0.728704	[mean(z_bmi)][skew(z_bmi)]
+22	0.009373	2.523100	[(slope(z_bmi)<0.000036)][(race==2.000000)]"
+3,1.0*bmi_slope+1.0*lab_slope,[slope(z_lab)],0.761,"Feature		Weight
+slope(z_lab)		1.757403
+","['bmi_slope', 'lab_slope']","complexity	fitness	fitness_v	eqn
+8	0.486969	1.067605	[slope(z_lab)]
+16	0.380954	2.549954	[slope(z_lab)][slope(z_bmi)]
+26	0.286088	1.497790	[slope(z_bmi)][(slope(z_lab)<-0.000036)]"
+4,1.0*bmi_slope+1.0*lab_max,[slope(z_bmi)],0.72,"Feature		Weight
+slope(z_bmi)		1.646884
+","['bmi_slope', 'lab_max']","complexity	fitness	fitness_v	eqn
+8	0.512711	0.983207	[slope(z_bmi)]
+10	0.228975	1.950021	[slope(z_bmi)][mean(z_lab)]
+12	0.182803	2.003763	[slope(z_bmi)][mean(z_lab)][min(z_lab)]"
+5,1.0*lab_var,[variance(z_age)],0.692,"Feature		Weight
+variance(z_age)		0.776798
+",['lab_var'],"complexity	fitness	fitness_v	eqn
+2	0.615517	0.774493	[variance(z_age)]
+4	0.202640	1.540456	[max(z_lab)][min(z_lab)]
+6	0.171265	1.613056	[max(z_lab)][min(z_lab)][kurtosis(z_lab)]"
+6,1.0*lab_min,[(min(z_lab)<-1.154023)],0.999,"Feature		Weight
+(min(z_lab)<-1.163866)		-5.262348
+",['lab_min'],"complexity	fitness	fitness_v	eqn
+2	0.097137	2.783183	[min(z_lab)]
+6	0.009086	2.349823	[(min(z_lab)<-1.154023)]
+8	0.007620	2.628560	[min(z_lab)][(min(z_lab)<-1.154023)]"
+7,1.0*bmi_slope+1.0*lab_median+1.0*age_max,[median(z_age)],0.75,"Feature		Weight
+median(z_age)		1.380771
+","['bmi_slope', 'lab_median', 'age_max']","complexity	fitness	fitness_v	eqn
+2	0.506694	0.883523	[median(z_age)]
+4	0.350988	1.220093	[mean(z_age)][median(z_lab)]
+12	0.085290	2.655006	[mean(z_age)][median(z_lab)][slope(z_bmi)]"

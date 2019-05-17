@@ -1,0 +1,79 @@
+,Equation,FEAT Best,FEAT Best Accuracy,FEAT Best Model,Predictors,Solution Archive
+0,1.0*bmi_slope+1.0*lab_var,[slope(z_bmi)],0.754,"Feature		Weight
+slope(z_bmi)		2.167179
+","['bmi_slope', 'lab_var']","complexity	fitness	fitness_v	eqn
+8	0.474049	1.052626	[slope(z_bmi)]
+10	0.437259	1.109877	[slope(z_bmi)][variance(z_age)]
+18	0.345688	2.575350	[slope(z_bmi)][(mean(z_bmi)/variance(z_lab))]"
+1,1.0*lab_max,[(race==0.000000)],0.542,"Feature		Weight
+(race==2.000000)		0.077684
+",['lab_max'],"complexity	fitness	fitness_v	eqn
+4	0.691690	0.695461	[(race==0.000000)]
+6	0.009248	2.332070	[(max(z_lab)<1.141135)]
+12	0.005193	2.619986	[(max(z_lab)<0.000000)][(max(z_lab)<1.141135)]"
+2,1.0*bmi_slope,[(slope(z_bmi)<0.000038)],0.999,"Feature		Weight
+(slope(z_bmi)<0.000034)		-5.094630
+",['bmi_slope'],"complexity	fitness	fitness_v	eqn
+8	0.426336	2.498687	[slope(z_bmi)]
+18	0.009375	2.187653	[(slope(z_bmi)<0.000038)]
+26	0.007999	2.415951	[slope(z_bmi)][(slope(z_bmi)<1.000000)]"
+3,1.0*bmi_slope+1.0*lab_slope,[skew(z_bmi)],0.498,"Feature		Weight
+skew(z_bmi)		-0.027802
+","['bmi_slope', 'lab_slope']","complexity	fitness	fitness_v	eqn
+8	0.506012	1.018178	[slope(z_bmi)]
+10	0.416081	1.207669	[slope(z_bmi)][mean(z_lab)]
+26	0.286281	1.638873	[slope(z_bmi)][(slope(z_lab)<-0.000198)]"
+4,1.0*bmi_slope+1.0*lab_max,[max(z_lab)],0.755,"Feature		Weight
+max(z_lab)		1.778104
+","['bmi_slope', 'lab_max']","complexity	fitness	fitness_v	eqn
+2	0.500074	1.043555	[max(z_lab)]
+10	0.295916	2.209781	[mean(z_lab)][slope(z_bmi)]
+12	0.251762	2.275913	[mean(z_lab)][slope(z_bmi)][min(z_lab)]"
+5,1.0*lab_var,[(race==0.000000)],0.665,"Feature		Weight
+(race==1.000000)		0.120784
+",['lab_var'],"complexity	fitness	fitness_v	eqn
+4	0.651692	0.734820	[kurtosis(z_bmi)][min(z_age)]
+4	0.699752	0.708924	[(race==0.000000)]
+6	0.653276	0.749617	[(kurtosis(z_age)<0.000000)]"
+6,1.0*lab_min,[(min(z_lab)<-1.146735)],0.999,"Feature		Weight
+(min(z_lab)<-1.163866)		-5.262347
+",['lab_min'],"complexity	fitness	fitness_v	eqn
+2	0.099350	2.882538	[min(z_lab)]
+6	0.009086	2.523929	[(min(z_lab)<-1.146735)]
+12	0.005093	2.843169	[(min(z_lab)<-1.146735)][(min(z_lab)<-1.146735)]"
+7,1.0*bmi_slope+1.0*lab_median+1.0*age_max,[max(z_age)],0.75,"Feature		Weight
+max(z_age)		1.377263
+","['bmi_slope', 'lab_median', 'age_max']","complexity	fitness	fitness_v	eqn
+2	0.537019	0.917852	[max(z_age)]
+4	0.342818	1.532019	[max(z_age)][median(z_lab)]
+12	0.153861	2.840903	[mean(z_age)][median(z_lab)][slope(z_bmi)]"
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,," clf = Feat(max_depth=10,                                                              
+               max_dim = 10,                                                          
+               obj='fitness,size',          
+               #gens = 1,                                                             
+               #pop_size = 1,                                                           
+               gens = 50,                                                           
+               pop_size = 50,                                                          
+               max_stall = 50,                                    
+               stagewise_xo = True,                                                      
+               scorer='log',                                                         
+               verbosity=2,                                                              
+               shuffle=True,                                                             
+               ml='LR',                                                                  
+               fb=0.1,                                                               
+               use_batch=False,                                                       
+               batch_size=100,                                                       
+               classification=True,                                                      
+               feature_names = ','.join(feature_names),                              
+               functions=""+,-,*,/,split,split_c,""            
+                         ""mean,median,max,min,variance,skew,kurtosis,slope,count"",       
+                          # ""slope"",                                                 
+               backprop=False,                                                           
+               iters=1,                                                                  
+               random_state=random_state,                                                
+               n_threads=8,                                                         
+               split=0.5)                                                           
+                               "

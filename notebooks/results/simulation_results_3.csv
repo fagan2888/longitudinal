@@ -1,0 +1,78 @@
+,Equation,FEAT Best,FEAT Best Accuracy,FEAT Best Model,Predictors,Solution Archive
+0,1.0*bmi_slope+1.0*lab_var,[slope(z_bmi)],0.754,"Feature		Weight
+slope(z_bmi)		2.167179
+","['bmi_slope', 'lab_var']","complexity	fitness	fitness_v	eqn
+8	0.474049	1.052626	[slope(z_bmi)]
+10	0.437259	1.109877	[slope(z_bmi)][variance(z_age)]
+14	0.227917	1.983105	[slope(z_bmi)][(variance(z_lab)<1.179562)]"
+1,1.0*lab_max,[median(z_lab)],0.859,"Feature		Weight
+median(z_lab)		3.525122
+",['lab_max'],"complexity	fitness	fitness_v	eqn
+2	0.318110	1.584568	[median(z_lab)]
+6	0.009248	2.332070	[(max(z_lab)<1.141135)]
+8	0.007854	2.602838	[max(z_lab)][(max(z_lab)<1.141135)]"
+2,1.0*bmi_slope,[(slope(z_bmi)<0.000038)],0.999,"Feature		Weight
+(slope(z_bmi)<0.000034)		-5.094630
+",['bmi_slope'],"complexity	fitness	fitness_v	eqn
+8	0.426336	2.498687	[slope(z_bmi)]
+18	0.009375	2.187653	[(slope(z_bmi)<0.000038)]
+36	0.005273	2.453166	[(slope(z_bmi)<0.000038)][(slope(z_bmi)<0.000038)]"
+3,1.0*bmi_slope+1.0*lab_slope,[slope(z_bmi)],0.726,"Feature		Weight
+slope(z_bmi)		1.528585
+","['bmi_slope', 'lab_slope']","complexity	fitness	fitness_v	eqn
+8	0.506012	1.018178	[slope(z_bmi)]
+10	0.416081	1.207669	[slope(z_bmi)][mean(z_lab)]
+12	0.408660	1.228723	[slope(z_bmi)][min(z_lab)][max(z_lab)]"
+4,1.0*bmi_slope+1.0*lab_max,[max(z_lab)],0.755,"Feature		Weight
+max(z_lab)		1.778104
+","['bmi_slope', 'lab_max']","complexity	fitness	fitness_v	eqn
+2	0.500074	1.043555	[max(z_lab)]
+10	0.295916	2.209781	[mean(z_lab)][slope(z_bmi)]
+12	0.282321	2.300589	[mean(z_lab)][slope(z_bmi)][variance(z_age)]"
+5,1.0*lab_var,[min(z_lab)],0.705,"Feature		Weight
+min(z_lab)		-0.697916
+",['lab_var'],"complexity	fitness	fitness_v	eqn
+2	0.636473	0.766877	[min(z_lab)]
+6	0.008431	2.616853	[(variance(z_lab)<0.869378)]
+12	0.004761	2.985854	[(variance(z_lab)<0.869378)][(variance(z_lab)<0.869378)]"
+6,1.0*lab_min,[(min(z_lab)<-1.146735)],0.999,"Feature		Weight
+(min(z_lab)<-1.163866)		-5.262347
+",['lab_min'],"complexity	fitness	fitness_v	eqn
+2	0.099350	2.882538	[min(z_lab)]
+6	0.009086	2.523929	[(min(z_lab)<-1.146735)]
+8	0.007641	2.796386	[min(z_lab)][(min(z_lab)<-1.146735)]"
+7,1.0*bmi_slope+1.0*lab_median+1.0*age_max,[race],0.5,"Feature		Weight
+race		-0.014067
+","['bmi_slope', 'lab_median', 'age_max']","complexity	fitness	fitness_v	eqn
+1	0.692040	0.695706	[race]
+2	0.537019	0.917852	[max(z_age)]
+3	0.536496	0.918022	[max(z_age)][race]"
+,,,,,,
+,,,,,,
+,,,,,,"max_depth=3, #force simplicity                                                              "
+,,,,,,"               max_dim = 3,                                                          "
+,,,,,,"               obj='fitness,size',   #size can change to complexity                                                   "
+,,,,,,"               #gens = 1,                                                             "
+,,,,,,"               #pop_size = 1,                                                           "
+,,,,,,"               gens = 50,                                                           "
+,,,,,,"               pop_size = 50,                                                          "
+,,,,,,"               max_stall = 50,        #num of trees to test w/ that don't have better accuracy                                               "
+,,,,,,"               stagewise_xo = True,                                                      "
+,,,,,,"               scorer='log',                                                         "
+,,,,,,"               verbosity=2,                                                              "
+,,,,,,"               shuffle=True,                                                             "
+,,,,,,"               ml='LR',                                                                  "
+,,,,,,"               fb=0.1,                                                               "
+,,,,,,"               use_batch=False,                                                       "
+,,,,,,"               batch_size=100,                                                       "
+,,,,,,"               classification=True,                                                      "
+,,,,,,"               feature_names = ','.join(feature_names),                              "
+,,,,,,"               functions=""+,-,*,/,split,split_c,""            "
+,,,,,,"mean,median,max,min,variance,skew,kurtosis,slope,count"",       
+                          # ""slope"",                                                 
+               backprop=False,                                                           
+               iters=1,                                                                  
+               random_state=random_state,                                                
+               n_threads=8,                                                         
+               split=0.5)             
+"

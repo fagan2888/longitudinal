@@ -1,0 +1,76 @@
+,Equation,FEAT Best,FEAT Best Accuracy,FEAT Best Model,Predictors,Solution Archive
+0,1.0*bmi_slope+1.0*lab_var,[min(z_lab)],0.586,"Feature		Weight
+min(z_lab)		-0.453478
+","['bmi_slope', 'lab_var']","complexity	fitness	fitness_v	eqn
+8	0.474049	1.052626	[slope(z_bmi)]
+10	0.437259	1.109877	[variance(z_age)][slope(z_bmi)]
+12	0.203270	2.004555	[max(z_lab)][slope(z_bmi)][min(z_lab)]"
+1,1.0*lab_max,[kurtosis(z_lab)],0.545,"Feature		Weight
+kurtosis(z_lab)		0.241073
+",['lab_max'],"complexity	fitness	fitness_v	eqn
+2	0.690442	0.698998	[kurtosis(z_lab)]
+6	0.009248	2.332070	[(max(z_lab)<1.141135)]
+8	0.007854	2.602838	[max(z_lab)][(max(z_lab)<1.141135)]"
+2,1.0*bmi_slope,[(slope(z_bmi)<0.000038)],1,"Feature		Weight
+(slope(z_bmi)<0.000038)		-5.244268
+",['bmi_slope'],"complexity	fitness	fitness_v	eqn
+8	0.426336	2.498687	[slope(z_bmi)]
+18	0.009375	2.187653	[(slope(z_bmi)<0.000038)]
+36	0.005273	2.453166	[(slope(z_bmi)<0.000038)][(slope(z_bmi)<0.000038)]"
+3,1.0*bmi_slope+1.0*lab_slope,[slope(z_bmi)],0.726,"Feature		Weight
+slope(z_bmi)		1.528585
+","['bmi_slope', 'lab_slope']","complexity	fitness	fitness_v	eqn
+8	0.506012	1.018178	[slope(z_bmi)]
+10	0.416081	1.207669	[slope(z_bmi)][mean(z_lab)]
+26	0.286281	1.638873	[slope(z_bmi)][(slope(z_lab)<-0.000198)]"
+4,1.0*bmi_slope+1.0*lab_max,[sex],0.513,"Feature		Weight
+sex		-0.053517
+","['bmi_slope', 'lab_max']","complexity	fitness	fitness_v	eqn
+1	0.687956	0.703425	[sex]
+2	0.500074	1.043555	[max(z_lab)]
+3	0.497143	1.052681	[max(z_lab)][sex]"
+5,1.0*lab_var,[(race==0.000000)],0.665,"Feature		Weight
+(race==1.000000)		0.120784
+",['lab_var'],"complexity	fitness	fitness_v	eqn
+4	0.699752	0.708924	[(race==0.000000)]
+8	0.699746	0.708959	[(race==0.000000)][(race==0.000000)]
+12	0.004761	2.985854	[(variance(z_lab)<0.869378)][(variance(z_lab)<0.869378)]"
+6,1.0*lab_min,[(min(z_lab)<-1.146735)],1,"Feature		Weight
+(min(z_lab)<-1.153662)		-5.395386
+",['lab_min'],"complexity	fitness	fitness_v	eqn
+2	0.099350	2.882538	[min(z_lab)]
+6	0.009086	2.523929	[(min(z_lab)<-1.146735)]
+10	0.007197	3.004314	[min(z_lab)][min(z_lab)][(min(z_lab)<-1.146735)]"
+7,1.0*bmi_slope+1.0*lab_median+1.0*age_max,[mean(z_age)],0.749,"Feature		Weight
+mean(z_age)		1.380610
+","['bmi_slope', 'lab_median', 'age_max']","complexity	fitness	fitness_v	eqn
+2	0.537279	0.917160	[mean(z_age)]
+4	0.345499	1.516400	[mean(z_age)][median(z_lab)]
+12	0.153861	2.840903	[mean(z_age)][median(z_lab)][slope(z_bmi)]"
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,"clf = Feat(max_depth=5,                                                              
+               max_dim = 10,                                                          
+               obj='fitness,size',                                                             
+               gens = 50,                                                           
+               pop_size = 50,                                                          
+               max_stall = 50,               
+               stagewise_xo = True,                                                      
+               scorer='log',                                                         
+               verbosity=2,                                                              
+               shuffle=True,                                                             
+               ml='LR',                                                                  
+               fb=0.1,                                                               
+               use_batch=False,                                                       
+               batch_size=100,                                                       
+               classification=True,                                                      
+               feature_names = ','.join(feature_names),                              
+               functions=""+,-,*,/,split,split_c,""            
+                         ""mean,median,max,min,variance,skew,kurtosis,slope,count"",       
+                          # ""slope"",                                                 
+               backprop=False,                                                           
+               iters=1,                                                                  
+               random_state=random_state,                                                
+               n_threads=8,                                                         
+               split=0.5)             "
